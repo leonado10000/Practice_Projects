@@ -35,14 +35,13 @@ void comment(){
         struct feedback *next;
     };
     typedef struct feedback *feed;
-    void comment_feed(){
-        feed temp=(struct feedback *)malloc(sizeof(Struct feedback));
+        feed temp=(struct feedback *)malloc(sizeof(struct feedback));
         printf("Enter the Room_ID\n");
         scanf("%d",&temp->Room_ID);
         printf("Enter the feedback\n");
-        scanf("%s",&temp->Feedback);
-        printf("Room_ID:"%d"\nFeedback:"%s,temp->Room_ID,temp->Feedback);
-    }
+        scanf("%c",&temp->Feedback);
+        printf("Room_ID: %d",temp->Room_ID);
+        printf("\nFeedback: %c",temp->Feedback);
 
 
 }
@@ -60,11 +59,12 @@ void main(){
         printf("Menu\n1.Add guest\t2.Add comment\nEnter choice:");
         scanf("%d",&choice);
         switch(choice){
-            case 1:
+        /*    case 1:
                 Enter_dets();
-                break;
+                break;*/
             case 2:
                 printf("Enter the comment you want to add");
+                comment();
                 break;
         }
     }
