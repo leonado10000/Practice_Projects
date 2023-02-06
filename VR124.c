@@ -36,21 +36,36 @@ struct feedback{
 
 void comments(){
     //  create a node and enter room id and feedback
-    void creatr()
-    {
+    void creatr(){
         temp=(struct feedback*)malloc(sizeof(struct feedback));
-        printf("Enter the Room_ID\n");
+        printf("\nEnter the Room_ID\n");
         scanf("%d",temp->Room_ID);
-        printf("Enter the Feedback\n");
-        scanf("%c",temp->Room_Feedback);
-        first = temp;
+        printf("\nEnter the Feedback\n");
+        fflush(stdin);
+        fflush(stdin);
+        gets(temp->Room_Feedback);
         temp->next=NULL;
     }
+
+    creatr();
     if (first == NULL){
-        creatr();
+        first = temp;
+        last = first;
+    }
+    else{
+        last->next = temp;
+        last = temp;
     }
 
+    void display(){
+        temp = first;
+        while(temp){
+            printf("\n\t%d\t\t%s\n\n",temp->Room_ID,temp->Room_Feedback);
+            temp = temp -> next;
+        }
+    }
 
+    display();
 /*    void creat(){
         for(int i=1;i<=2;i++){
             if(i==1){
@@ -101,7 +116,7 @@ void main(){
                 Enter_dets();
                 break;*/
             case 2:
-                printf("\nEnter the comment you want to add");
+                printf("\nEnter the comment you want to add\n");
                 comments();
                 break;
         }
