@@ -29,23 +29,58 @@ int curr_C1=0;
 
 
 void comment(){
-    struct feedback{
-        int Room_ID;
-        char Feedback[1000];
+struct feedback{
+        char Room_ID_Feedback[1000];
         struct feedback *next;
-    };
-    typedef struct feedback *feed;
-        feed temp=(struct feedback *)malloc(sizeof(struct feedback));
-        printf("Enter the Room_ID\n");
-        scanf("%d",&temp->Room_ID);
-        printf("Enter the feedback\n");
-        scanf("%c",&temp->Feedback);
-        printf("Room_ID: %d",temp->Room_ID);
-        printf("\nFeedback: %c",temp->Feedback);
-
-
+    }*feed,*feedback,*temp=NULL,*first=NULL,*last=NULL;
+void creatr(){
+    temp=(struct feedback*)malloc(sizeof(struct feedback));
+            printf("Enter the Room_ID\n");
+            scanf("%c",temp->Room_ID_Feedback);
+            temp->next=NULL;
+}
+void creatf(){
+    temp=(struct feedback*)malloc(sizeof(struct feedback));
+    printf("Enter the Feedback\n");
+    scanf("%c",temp->Room_ID_Feedback);
 }
 
+void creat(){
+    for(int i=1;i<=2;i++){
+        if(i==1){
+            if(first==NULL){
+                creatr();
+                first=temp;
+                last=first;
+                printf("Room_ID:%c",Room_ID_Feedback);
+            }
+            else{
+                creatr();
+                temp->next=first;
+                first=temp;
+                printf("Room_ID:%c",Room_ID_Feedback);
+            }
+        }
+    else{
+        if(first==NULL){
+                creatr();
+                first=temp;
+                last=first;
+                printf("Room_ID:%c",Room_ID_Feedback);
+            }
+            else{
+                creatr();
+                temp->next=first;
+                first=temp;
+                printf("Room_ID:%c",Room_ID_Feedback);
+            }
+            
+        }
+    }
+}
+}
+
+        
 
 
 
@@ -63,7 +98,7 @@ void main(){
                 Enter_dets();
                 break;*/
             case 2:
-                printf("Enter the comment you want to add");
+                printf("\nEnter the comment you want to add");
                 comment();
                 break;
         }
