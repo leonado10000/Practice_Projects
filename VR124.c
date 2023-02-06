@@ -27,24 +27,31 @@ int curr_C1=0;
 //================================================================================================================================================================================================================
 //================================================================================================================================================================================================================
 
+//  structure for feedback data are roomid and feedback
+struct feedback{
+    int Room_ID;
+    char Room_Feedback[1000];
+    struct feedback *next;
+}*feed,*feedback,*temp=NULL,*first=NULL,*last=NULL;
 
 void comments(){
-    struct feedback{
-        int Room_ID;
-        char Room_Feedback[1000];
-        struct feedback *next;
-    }*feed,*feedback,*temp=NULL,*first=NULL,*last=NULL;
-    
-    void creatr(){
+    //  create a node and enter room id and feedback
+    void creatr()
+    {
         temp=(struct feedback*)malloc(sizeof(struct feedback));
         printf("Enter the Room_ID\n");
         scanf("%d",temp->Room_ID);
         printf("Enter the Feedback\n");
         scanf("%c",temp->Room_Feedback);
+        first = temp;
         temp->next=NULL;
     }
+    if (first == NULL){
+        creatr();
+    }
 
-    void creat(){
+
+/*    void creat(){
         for(int i=1;i<=2;i++){
             if(i==1){
                 if(first==NULL){
@@ -73,7 +80,7 @@ void comments(){
                     printf("Room_ID:%c",temp->Room_Feedback);
                 }
     }
-}
+}*/
 }
 
         
