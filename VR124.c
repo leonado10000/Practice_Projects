@@ -28,7 +28,7 @@ int curr_C1=0;
 //================================================================================================================================================================================================================
 
 
-void comment(){
+void comments(){
 struct feedback{
         char Room_ID_Feedback[1000];
         struct feedback *next;
@@ -99,7 +99,7 @@ void main(){
                 break;*/
             case 2:
                 printf("\nEnter the comment you want to add");
-                comment();
+                comments();
                 break;
         }
     }
