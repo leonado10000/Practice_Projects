@@ -60,7 +60,7 @@ void comments(){
     void display(){
         temp = first;
         while(temp){
-            printf("\n\t%d\t\t%s\n\n",temp->Room_ID,temp->Room_Feedback);
+            printf("\n\t%d\t\t  %s\n\n",temp->Room_ID,temp->Room_Feedback);
             temp = temp -> next;
         }
     }
