@@ -65,15 +65,14 @@ typedef struct details D;
 struct node{
     D info;
     struct node* next;
-    struct node* prev;
 };
 typedef struct node* Node;
+Node first=NULL,last=NULL;
 
 Node createNode(D base){
     Node temp = (Node)malloc(sizeof(struct node));
     temp->info =base;
     temp->next =NULL;
-    temp->prev =NULL;
     return temp;
 }
 
@@ -110,7 +109,7 @@ Node Enter_dets(){
             l=4;
         }
     }
-
+    Node N;
     if(i){
         D temp;
         printf("Enter room ID");
@@ -128,11 +127,7 @@ Node Enter_dets(){
         printf("Enter amount");
         scanf("%d",&temp.amount);
         temp.room_type = l;
-
-        Node N = createNode(temp);
-        printf("%d\t%s\t%d\t%d\t%d\t%d\t%d",temp.ID,temp.name,temp.Adults,temp.children,temp.start_day,temp.end_day,temp.amount);
-
-
+        N = createNode(temp);
     }
     else{
         int ch;
@@ -141,6 +136,36 @@ Node Enter_dets(){
         if(ch==1){
             Enter_dets();
         }
+        N =NULL;
+    }
+
+    if (N){
+        if(first==NULL){
+            first = N;
+            last = N;
+        }
+        else{
+            last->next=N;
+            last = N;
+        }
+    }
+}
+void displayRec(D temp){
+    printf("\n%d\t%s\t%d\t%d\t%d\t%d\t%d\n",temp.ID,temp.name,temp.Adults,temp.children,temp.start_day,temp.end_day,temp.amount);
+}
+void display(){
+    Node temp = first;
+    if (temp == NULL){
+        printf("Empty\n");
+    }
+    else{
+        printf("Employee records are :-\n");
+        while (temp)
+        {
+            displayRec(temp->info);
+            temp=temp->next;
+        }
+        
     }
 }
 
@@ -162,7 +187,7 @@ void main(){
     int ch=1,choice;
     char pref;
     while(ch){
-        printf("Menu\n1.Add guest\t2.Add comment\nEnter choice:");
+        printf("Menu\n1.Add guest\t2.Add comment\t3.Display\nEnter choice:");
         scanf("%d",&choice);
         switch(choice){
             case 1:
@@ -170,6 +195,9 @@ void main(){
                 break;
             case 2:
                 printf("Enter the comment you want to add");
+                break;
+            case 3:
+                display();
                 break;
         }
     }
