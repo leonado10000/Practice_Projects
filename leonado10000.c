@@ -151,7 +151,7 @@ Node Enter_dets(){
     }
 }
 void displayRec(D temp){
-    printf("\n%d\t%s\t%d\t%d\t%d\t%d\t%d\n",temp.ID,temp.name,temp.Adults,temp.children,temp.start_day,temp.end_day,temp.amount);
+    printf("\n%d\t%s\t\t%d\t%d\t%d\t%d\t%d\t%d\n",temp.ID,temp.name,temp.Adults,temp.children,temp.room_type,temp.start_day,temp.end_day,temp.amount);
 }
 void display(){
     Node temp = first;
@@ -159,7 +159,7 @@ void display(){
         printf("Empty\n");
     }
     else{
-        printf("Employee records are :-\n");
+        printf("Employee records are :-\nRoomID\tName\tAdults\tType\tChildren\tStart\tEnd\tAmount\n");
         while (temp)
         {
             displayRec(temp->info);
@@ -168,7 +168,17 @@ void display(){
         
     }
 }
-
+void addInput(){
+    //       ID     Name    Adults  Children    Type    Start   End     Amount
+    D L[5]={{001,"Pikachu",0,1,1,1,5,1000},{002,"Charmander",0,2,1,2,5,2000},{003,"Charizard",2,0,2,3,5,5000},{004,"Squirtel",10,0,1,3,10,25000},{011,"Dragonite",1,0,1,1,2,6000}};
+    Node P = createNode(L[0]);
+    Node N;
+    for (int i=0;i<5;i++){
+        N = createNode(L[i]);
+        last->next=N;
+        last = N;
+    }
+}
 
 
 
@@ -187,7 +197,7 @@ void main(){
     int ch=1,choice;
     char pref;
     while(ch){
-        printf("Menu\n1.Add guest\t2.Add comment\t3.Display\nEnter choice:");
+        printf("Menu\n1.Add guest\t2.Add comment\t3.Display\t4.Add inputs\nEnter choice:");
         scanf("%d",&choice);
         switch(choice){
             case 1:
@@ -198,6 +208,9 @@ void main(){
                 break;
             case 3:
                 display();
+                break;
+            case 4:
+                addInput();
                 break;
         }
     }

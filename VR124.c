@@ -59,6 +59,7 @@ void comments(){
 
     void display(){
         temp = first;
+        printf("\tRoomID\t\t Comment\n")
         while(temp){
             printf("\n\t%d\t\t  %s\n\n",temp->Room_ID,temp->Room_Feedback);
             temp = temp -> next;
