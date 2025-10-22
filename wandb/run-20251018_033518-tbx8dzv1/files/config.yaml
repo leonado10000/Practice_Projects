@@ -1,0 +1,50 @@
+_wandb:
+    value:
+        cli_version: 0.22.2
+        e:
+            5veyk3gta100dn3ypx0itwrvfu31q8sk:
+                codePath: notes\wb_test01.py
+                codePathLocal: notes\wb_test01.py
+                cpu_count: 8
+                cpu_count_logical: 16
+                cudaVersion: "12.9"
+                disk:
+                    /:
+                        total: "510973177856"
+                        used: "298430402560"
+                email: rahul.tfx@gmail.com
+                executable: C:\Users\rjdis\AppData\Local\Programs\Python\Python311\python.exe
+                git:
+                    commit: 77423258f719ebff04bd722dc06e36977316920f
+                    remote: https://github.com/leonado10000/Practice_Projects.git
+                gpu: NVIDIA GeForce RTX 3050 Laptop GPU
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 2048
+                      memoryTotal: "4294967296"
+                      name: NVIDIA GeForce RTX 3050 Laptop GPU
+                      uuid: GPU-e4297789-6045-185a-e6be-c6d570820172
+                host: Leo
+                memory:
+                    total: "16473034752"
+                os: Windows-10-10.0.26100-SP0
+                program: c:\Users\rjdis\OneDrive\Documents\GitHub\Practice_Projects\notes\wb_test01.py
+                python: CPython 3.11.2
+                root: C:\Users\rjdis\OneDrive\Documents\GitHub\Practice_Projects
+                startedAt: "2025-10-17T22:05:18.853551Z"
+                writerId: 5veyk3gta100dn3ypx0itwrvfu31q8sk
+        m: []
+        python_version: 3.11.2
+        t:
+            "1":
+                - 105
+            "2":
+                - 105
+            "4": 3.11.2
+            "5": 0.22.2
+            "8":
+                - 2
+                - 3
+            "12": 0.22.2
+            "13": windows-amd64

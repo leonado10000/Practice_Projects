@@ -12,6 +12,8 @@ class LinearRegression:
     def __init__(self, input_dim, output_dim, bias=False):
         self.input_dim = input_dim
         self.output_dim = output_dim
+
+        # normal weight untransposed. i.e output_dim x input_dim
         self.weights = [
             [Tensor(random.uniform(-1/(output_dim**.5), 1/(output_dim**.5))) 
                 for _ in range(input_dim)]
@@ -20,6 +22,7 @@ class LinearRegression:
         self.bias = Tensor([random.uniform(-1/output_dim**.5, 1/output_dim**.5) for _ in range(output_dim)]) if bias else None
 
     def __call__(self, X):
+        print("shape X:", len(X), len(X[0]), "shape weights:", len(self.weights), len(self.weights[0]))
         y_pred = []
         for x in X:
             out = []
@@ -70,10 +73,10 @@ class SGD:
             for j in range(self.model.input_dim):
                 self.model.weights[i][j].data -= self.lr * self.model.weights[i][j].grad
 
-X = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
-y = [[1,4,2,5],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
+X = [[random.uniform(0,10) for _ in range(3)] for _ in range(4)]
+y = [[random.uniform(0,10) for _ in range(4)] for _ in range(4)]
 
-model = LinearRegression(4,4,bias=False)
+model = LinearRegression(3,4,bias=False)
 mse = MSELoss(model)
 sgd = SGD(model, lr=0.01)
 

@@ -1,0 +1,13 @@
+[34m[1mwandb[0m: Initializing weave.
+[36m[1mweave[0m: Logged in as Weights & Biases user: rahul-tfx.
+[36m[1mweave[0m: View Weave data at https://wandb.ai/_rahul1/quickstart-playground/weave
+Epoch 0, Loss: 0.251817675305764
+Epoch 10, Loss: 0.2320832919380073
+Epoch 20, Loss: 0.21479479134367777
+Epoch 30, Loss: 0.1996490304029789
+Epoch 40, Loss: 0.18638043760505674
+Epoch 50, Loss: 0.17475635641650558
+Epoch 60, Loss: 0.16457296579356095
+Epoch 70, Loss: 0.15565170630669375
+Epoch 80, Loss: 0.147836149211919
+Epoch 90, Loss: 0.14098925356993014
